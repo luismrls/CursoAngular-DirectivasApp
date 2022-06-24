@@ -14,7 +14,9 @@
         </div>
 
         <div class="col-auto">
-            <span error-msg  
+            <span error-msg
+                  [mensaje]="texto"
+                  [color]="color"    
                   *ngIf="campoNoValido('nombre')">Este campo es requerido</span>
         </div>
 
@@ -22,7 +24,10 @@
 
     <div class="row mt-3">
         <div class="col">
-            <button class="btn btn-success">Guardar</button>
+            <button class="btn btn-success me-3"
+                    (click)="cambiarNombre()" >Guardar</button>
+            <button class="btn btn-dark"
+                            (click)="cambiarColor()" >Chaenge Color</button>
         </div>
     </div>
 
