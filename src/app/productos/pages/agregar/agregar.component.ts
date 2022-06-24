@@ -23,7 +23,7 @@ export class AgregarComponent {
   }
 
   cambiarNombre() {
-    this.texto = 'Luis Jimnénez';
+    this.texto = Math.random().toString();
   }
 
   cambiarColor() {
