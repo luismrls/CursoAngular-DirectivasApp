@@ -14,9 +14,7 @@
         </div>
 
         <div class="col-auto">
-            <span error-msg
-                  [mensaje]="texto"
-                  [color]="color"    
+            <span error-msg 
                   *ngIf="campoNoValido('nombre')">Este campo es requerido</span>
         </div>
 

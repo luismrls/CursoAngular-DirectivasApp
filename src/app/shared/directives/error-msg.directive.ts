@@ -5,20 +5,20 @@ import { Directive, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '
 })
 export class ErrorMsgDirective implements OnInit {
 
-  private _color: string = '';
-  private _mensaje: string = '';
+  private _color: string = 'Red';
+  private _mensaje: string = 'Este campo es requerido';
 
   htmlElement: ElementRef<HTMLElement>;
   // @Input() color: string = 'red';
   @Input() set mensaje (valor: string ) {
-    this.htmlElement.nativeElement.innerHTML = valor;
     this._mensaje = valor;
+    this.setMensaje();
   };
   
   // @Input() mensaje: string = 'Este campo es requerido';
   @Input() set color (valor: string ) {
-    this.htmlElement.nativeElement.style.color = valor;
-    this._color = valor
+    this._color = valor;
+    this.setColor();
   };
   
 
@@ -37,14 +37,17 @@ export class ErrorMsgDirective implements OnInit {
   // }
 
   ngOnInit(): void {
+    this.setClass();
+    this.setColor();
+    this.setMensaje();
   }
 
   setColor(): void {
-    this.htmlElement.nativeElement.style.color = this.color;
+    this.htmlElement.nativeElement.style.color = this._color;
   }
 
   setMensaje(): void {
-    this.htmlElement.nativeElement.innerHTML = this.mensaje;
+    this.htmlElement.nativeElement.innerHTML = this._mensaje;
   }
   
   setClass() {
