@@ -5,6 +5,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
   styles: [
+     `
+     .hidden {
+      display: none;
+     }
+     `
   ]
 })
 export class AgregarComponent {
